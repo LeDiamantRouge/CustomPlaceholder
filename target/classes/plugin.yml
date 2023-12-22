@@ -1,0 +1,10 @@
+name: CustomPlaceholder
+version: '1.0-SNAPSHOT'
+main: fr.lediamantrouge.customplaceholder.CustomPlaceholder
+depend: [PlaceholderAPI]
+author: LeDiamantRouge
+
+commands:
+  customplaceholder:
+    permission: customplaceholder.use
+    aliases: [cp]

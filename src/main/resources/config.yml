@@ -1,0 +1,4 @@
+custom-placeholder:
+  ip: "play.myserver.net" # %ip%
+  name: "NomDuServeur" # %name%
+  # you can create what you want for name

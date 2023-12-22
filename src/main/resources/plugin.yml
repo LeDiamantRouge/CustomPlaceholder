@@ -1,0 +1,10 @@
+name: CustomPlaceholder
+version: '${project.version}'
+main: fr.lediamantrouge.customplaceholder.CustomPlaceholder
+depend: [PlaceholderAPI]
+author: LeDiamantRouge
+
+commands:
+  customplaceholder:
+    permission: customplaceholder.use
+    aliases: [cp]
