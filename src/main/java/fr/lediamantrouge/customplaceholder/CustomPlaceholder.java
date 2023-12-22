@@ -25,31 +25,29 @@ public final class CustomPlaceholder extends JavaPlugin {
     public void registerPlaceholder() {
         if (getConfig().getConfigurationSection("custom-placeholder") != null) {
             for (String key : getConfig().getConfigurationSection("custom-placeholder").getKeys(false)) {
-                if (!PlaceholderAPI.isRegistered(key)) {
-                    new PlaceholderExpansion() {
+                new PlaceholderExpansion() {
 
-                        @Override
-                        public @NotNull String getIdentifier() {
-                            return key;
-                        }
+                    @Override
+                    public @NotNull String getIdentifier() {
+                        return key;
+                    }
 
-                        @Override
-                        public @NotNull String getAuthor() {
-                            return "CustomPlaceholder";
-                        }
+                    @Override
+                    public @NotNull String getAuthor() {
+                        return "CustomPlaceholder";
+                    }
 
-                        @Override
-                        public @NotNull String getVersion() {
-                            return CustomPlaceholder.this.getDescription().getVersion();
-                        }
+                    @Override
+                    public @NotNull String getVersion() {
+                        return CustomPlaceholder.this.getDescription().getVersion();
+                    }
 
-                        @Override
-                        public @Nullable String onPlaceholderRequest(Player player, @NotNull String params) {
-                            return getConfig().getConfigurationSection("custom-placeholder").getString(key);
-                        }
-                    }.register();
-                    getLogger().info("Registered custom placeholder " + key);
-                }
+                    @Override
+                    public @Nullable String onPlaceholderRequest(Player player, @NotNull String params) {
+                        return getConfig().getConfigurationSection("custom-placeholder").getString(key);
+                    }
+                }.register();
+                getLogger().info("Registered custom placeholder " + key);
             }
             getLogger().info("All custom placeholders have been registered");
         } else {
