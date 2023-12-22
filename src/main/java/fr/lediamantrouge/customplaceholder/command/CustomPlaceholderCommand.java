@@ -13,6 +13,7 @@ public class CustomPlaceholderCommand implements CommandExecutor {
         }
         if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
             CustomPlaceholder.getInstance().reloadConfig();
+            CustomPlaceholder.getInstance().registerPlaceholder();
             s.sendMessage("§aConfiguration reloaded !");
         }
         return true;
